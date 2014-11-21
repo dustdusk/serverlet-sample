@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ServerletSample</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>globleMsg</param-name>
+    <param-value>this Message is for everyone form web.xml</param-value>
+  </context-param>
+  <servlet-mapping>
+    <servlet-name>outsidePutServerlet</servlet-name>
+    <url-pattern>/OutsidePutServerlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>lifeCycleServerlet</servlet-name>
+    <url-pattern>/LifeCycleServerlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>outsidePutServerlet</servlet-name>
+    <servlet-class>samplePack.outsidePutServerlet</servlet-class>
+    <init-param>
+      <param-name>localParam</param-name>
+      <param-value>this is a default value from web.xml</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>lifeCycleServerlet</servlet-name>
+    <servlet-class>samplePack.lifeCycleServerlet</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+</web-app>
