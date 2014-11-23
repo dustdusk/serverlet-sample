@@ -1,6 +1,8 @@
 package samplePack;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class reDirectServer
  */
-@WebServlet("/reDirectServer")
+@WebServlet("/ReDirectServer")
 public class ReDirectServer extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -26,14 +28,40 @@ public class ReDirectServer extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		HtmlTemplate htmlTemplate = new HtmlTemplate();
+		//設定編碼
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		//設定頁面資訊
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println(htmlTemplate.genHeader(this.getServletName()));
+		// 網頁內容 - start
+		out.println(request.getParameter("inputGet"));
+		// 網頁內容 - end
+		out.println(htmlTemplate.genfonter());
+		out.flush();
+		out.close();
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		HtmlTemplate htmlTemplate = new HtmlTemplate();
+		//設定編碼
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		//設定頁面資訊
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println(htmlTemplate.genHeader(this.getServletName()));
+		// 網頁內容 - start
+		out.println(request.getParameter("input"));
+		// 網頁內容 - end
+		out.println(htmlTemplate.genfonter());
+		out.flush();
+		out.close();
 	}
-
+	
 }

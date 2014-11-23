@@ -71,7 +71,6 @@ public class HellowWorld extends HttpServlet {
 			request.getRequestDispatcher("/WEB-INF/hiddenPage.html").forward(request, response);
 			return;
 		} else if("hidden".equals(name)){
-			//用forward 才能取道web-inf下的東西
 			response.sendRedirect("hiddenPageFake.html");
 			return;
 		}else {
