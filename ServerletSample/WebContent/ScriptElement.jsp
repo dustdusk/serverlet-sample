@@ -9,7 +9,7 @@
 <%
 out.println(" this nomal output by java code !<br>");
 %>
-<%!String getOutput(){ 
+<%!String getOutput(){   
     return "use <%= to output value and the value is generate by java method!<br>";
 }
 %>
