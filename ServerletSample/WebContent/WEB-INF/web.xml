@@ -13,14 +13,7 @@
     <param-name>globleMsg</param-name>
     <param-value>this Message is for everyone form web.xml</param-value>
   </context-param>
-  <servlet-mapping>
-    <servlet-name>outsidePutServerlet</servlet-name>
-    <url-pattern>/OutsidePutServerlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>lifeCycleServerlet</servlet-name>
-    <url-pattern>/LifeCycleServerlet</url-pattern>
-  </servlet-mapping>
+
   <servlet>
     <servlet-name>outsidePutServerlet</servlet-name>
     <servlet-class>samplePack.outsidePutServerlet</servlet-class>
@@ -29,9 +22,36 @@
       <param-value>this is a default value from web.xml</param-value>
     </init-param>
   </servlet>
+  <servlet-mapping>
+    <servlet-name>outsidePutServerlet</servlet-name>
+    <url-pattern>/OutsidePutServerlet</url-pattern>
+  </servlet-mapping>
+  
   <servlet>
     <servlet-name>lifeCycleServerlet</servlet-name>
     <servlet-class>samplePack.lifeCycleServerlet</servlet-class>
     <load-on-startup>0</load-on-startup>
   </servlet>
+  <servlet-mapping>
+    <servlet-name>lifeCycleServerlet</servlet-name>
+    <url-pattern>/LifeCycleServerlet</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+	<filter-name>loginFilter</filter-name>
+	<filter-class>samplePack.filter.SampleFilter</filter-class>
+	<init-param>
+	  <param-name>account</param-name>
+	  <param-value>admin</param-value>
+	</init-param>
+	<init-param>
+	  <param-name>password</param-name>
+	  <param-value>1234567</param-value>
+	</init-param>
+  </filter>
+  <filter-mapping>
+	<filter-name>loginFilter</filter-name>
+	<url-pattern>/FilterSample/FilterSampleRespose.jsp</url-pattern>
+	<dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
 </web-app>

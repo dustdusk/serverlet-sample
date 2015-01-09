@@ -10,9 +10,9 @@
 <jsp:useBean id="sampleForm" class="samplePack.bean.SampleForm" scope="page"></jsp:useBean>
 <%-- 實際把值從request load 近Java bean--%>
 <jsp:setProperty property="*" name="sampleForm"/>
-<form name="sampleForm"action="JavaBeanSampleLogin.jsp">
+<form name="sampleForm"action="FilterSampleLogin.jsp">
 <div style="background-color: #AAAAAA;width: 350px;margin: 50px;padding: 25px;">
-    <font style="color: #FFFFFF;font-size: 20px">this is your account and password</font><br>
+    <font style="color: #FFFFFF;font-size: 20px">the account and password is not correct!<br>Please try again~</font><br>
     <table>
         <tr>
            <td width="50px">Account:</td>
